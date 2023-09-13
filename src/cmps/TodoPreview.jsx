@@ -6,7 +6,7 @@ export function TodoPreview({ todo, onRemoveTodo }) {
   const [status, setStatus] = useState(todo.status)
 
   const toggleStatus = () => {
-    const newStatus = status === 'active' ? 'done' : 'active';
+    const newStatus = status === 'Active' ? 'Done' : 'Active';
   
     // Update the status of the todo using the service
     todoService.save({ ...todo, status: newStatus }).then((savedTodo) => {
@@ -18,7 +18,7 @@ export function TodoPreview({ todo, onRemoveTodo }) {
   };
   
 
-  const titleClass = status === 'done' ? 'done' : ''
+  const titleClass = status === 'Done' ? 'done' : ''
 
   const getCategoryColor = (category) => {
     const categoryColors = {
